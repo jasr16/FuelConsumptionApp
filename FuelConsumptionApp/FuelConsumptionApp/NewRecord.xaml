@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FuelConsumptionApp.NewRecord">
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="Instructions" Text="To add new record, enter fuel volume in litres and corresponding mileage in kilometres." 
+                   FontSize="14" HorizontalTextAlignment="Center" Padding="20,40,20,20" />
+            <Entry x:Name="VolumeEntry" Placeholder="Fuel volume in litres"/>
+            <Entry x:Name="MileageEntry" Placeholder="Mileage in kilometres"/>
+            <Button x:Name="button_calculate" Text="Calculate!" Margin="75, 10, 75, 0" Clicked="Button_calculate_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

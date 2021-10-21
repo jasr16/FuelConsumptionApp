@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FuelConsumptionApp.MainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+        Name="AddItem"
+        Order="Secondary"
+        Priority="0"
+        Text="Add record"
+        Clicked="Button_add_Clicked"/>
+        <ToolbarItem
+        Name="DeleteAll"
+        Order="Secondary"
+        Priority="0"
+        Text="Delete all records"
+        Clicked="Button_delete_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout>
+        <Label x:Name="LongTermLabel" Text="Long-Term Consumption" FontSize="18" HorizontalTextAlignment="Left" Padding="50,50,50,0" />
+        <Label x:Name="OverallLabel" Text="" FontSize="28" HorizontalTextAlignment="Left" Padding="50,10,50,80" TextColor="Black"/>
+
+        <Label Text="History" HorizontalTextAlignment="Center" FontSize="Title" Margin="0,50,0,0"/>
+        <ListView x:Name="listView" RowHeight="55" ItemSelected="ListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <ViewCell.View>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Consumption, StringFormat='{0:#,#.00} l/100 km'}" TextColor="Black" FontSize="16" Padding="25, 8, 25, 0"/>
+                                <StackLayout Orientation="Horizontal" Padding="15, 0, 15, 0">
+                                    <Label Text="{Binding Volume, StringFormat='{0} litres per'}" />
+                                    <Label Text="{Binding Mileage, StringFormat='{0} kilometres'}" />
+                                    <Label Text="{Binding Date, StringFormat='{0}'}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </StackLayout>
+
+</ContentPage>

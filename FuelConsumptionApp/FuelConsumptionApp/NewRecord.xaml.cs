@@ -21,26 +21,17 @@ namespace FuelConsumptionApp
             InitializeComponent();
         }
 
-        //public NewRecord(TankRecord tr)
-        //{
-        //    InitializeComponent();
-        //    this.VolumeEntry.Placeholder = tr.Volume.ToString();
-        //    this.VolumeEntry.IsEnabled = false; 
-        //    this.MileageEntry.Placeholder = tr.Mileage.ToString();
-        //    this.MileageEntry.IsEnabled = false;
-        //}
-
         public async void Button_calculate_Clicked(object sender, EventArgs e)
         {
             bool isVolumeEntryValid = float.TryParse(VolumeEntry.Text, out float volume);
             bool isMileageEntryValid = float.TryParse(MileageEntry.Text, out float mileage);
             if (isMileageEntryValid && isVolumeEntryValid && volume > 0 && mileage > 0)
             {
-                Model.TankRecord new_record = new Model.TankRecord()
+                TankRecord new_record = new Model.TankRecord()
                 {
                     Volume = volume,
                     Mileage = mileage,
-                    Consumption = Model.TankRecord.ComputeConsumption(volume, mileage),
+                    Consumption = TankRecord.ComputeConsumption(volume, mileage),
                     Date = DateTime.Now,
                 };
 
@@ -50,7 +41,7 @@ namespace FuelConsumptionApp
                 {
                     await App.Database.SaveRecordAsync(new_record);
                     await DisplayAlert("The new record was saved and overall was recalculated",
-                            $"Your average fuel consumption is: \r\n {Model.TankRecord.CalculateOverall().ToString("0.00")} l/100 km", "OK");
+                            $"Your average fuel consumption is: \r\n {TankRecord.CalculateOverall().ToString("0.00")} l/100 km", "OK");
                 }
             }
             else

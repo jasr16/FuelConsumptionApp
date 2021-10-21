@@ -41,16 +41,16 @@ namespace FuelConsumptionApp
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            bool response = await DisplayAlert("Delete", "Do you want to delete this record?", "Yes", "No");
-            if (response)
-            {
-                Model.TankRecord recordToBeDeleted = (Model.TankRecord)listView.SelectedItem;
-                await App.Database.DeleteRecordAsync(recordToBeDeleted);
-            }
-            OnAppearing();
+            //bool response = await DisplayAlert("Delete", "Do you want to delete this record?", "Yes", "No");
+            //if (response)
+            //{
+            //    Model.TankRecord recordToBeDeleted = (Model.TankRecord)listView.SelectedItem;
+            //    await App.Database.DeleteRecordAsync(recordToBeDeleted);
+            //}
+            //OnAppearing();
 
-            // Model.TankRecord record = (Model.TankRecord)listView.SelectedItem;
-            // await Navigation.PushAsync(new NewRecord(record) { });
+            Model.TankRecord tr = (Model.TankRecord)listView.SelectedItem;
+            await Navigation.PushAsync(new Record(tr) { });
         }
 
         private void ViewCell_Tapped(object sender, EventArgs e)

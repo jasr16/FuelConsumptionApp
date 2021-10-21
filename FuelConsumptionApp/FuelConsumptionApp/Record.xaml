@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FuelConsumptionApp.Record">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label x:Name="ConsumptionLabel" Text="Average consumption (l/100km):" FontSize="Medium" FontAttributes="Bold" Margin="10,20,10,0"/>
+            <Entry x:Name="ConsumptionEntry" HorizontalOptions="Fill" />
+
+            <Label x:Name="VolumeLabel" Text="Fuel volume (l):" FontSize="Medium" Margin="10,0,0,0"/>
+            <Entry x:Name="VolumeEntry" HorizontalOptions="Fill" />
+
+            <Label x:Name="MileageLabel" Text="Mileage (km):" FontSize="Medium" Margin="10,0,0,0"/>
+            <Entry x:Name="MileageEntry" HorizontalOptions="Fill" />
+
+            <Label x:Name="DateLabel" Text="Date:" FontSize="Medium" Margin="10,0,0,0"/>
+            <Entry x:Name="DateEntry" HorizontalOptions="Fill"/>
+
+
+            <Button x:Name="ButtonEdit" Text="Edit" Margin="75, 10, 75, 0" Clicked="ButtonEdit_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

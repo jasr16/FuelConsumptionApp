@@ -17,7 +17,6 @@ namespace FuelConsumptionApp
             InitializeComponent();
         }
 
-
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -25,7 +24,6 @@ namespace FuelConsumptionApp
             OverallLabel.Text = Model.TankRecord.CalculateOverall().ToString("0.00") + " l/100 km";
             listView.ItemsSource = await App.Database.GetRecordsAsync();
         }
-
 
         public async void Button_add_Clicked(object sender, EventArgs e)
         {
@@ -50,6 +48,9 @@ namespace FuelConsumptionApp
                 await App.Database.DeleteRecordAsync(recordToBeDeleted);
             }
             OnAppearing();
+
+            // Model.TankRecord record = (Model.TankRecord)listView.SelectedItem;
+            // await Navigation.PushAsync(new NewRecord(record) { });
         }
 
         private void ViewCell_Tapped(object sender, EventArgs e)

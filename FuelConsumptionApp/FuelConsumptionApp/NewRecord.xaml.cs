@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using FuelConsumptionApp.Model;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,11 +16,19 @@ namespace FuelConsumptionApp
     public partial class NewRecord : ContentPage
     {
 
-
         public NewRecord()
         {
             InitializeComponent();
         }
+
+        //public NewRecord(TankRecord tr)
+        //{
+        //    InitializeComponent();
+        //    this.VolumeEntry.Placeholder = tr.Volume.ToString();
+        //    this.VolumeEntry.IsEnabled = false; 
+        //    this.MileageEntry.Placeholder = tr.Mileage.ToString();
+        //    this.MileageEntry.IsEnabled = false;
+        //}
 
         public async void Button_calculate_Clicked(object sender, EventArgs e)
         {

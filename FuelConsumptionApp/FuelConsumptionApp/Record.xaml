@@ -2,6 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FuelConsumptionApp.Record">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+        Name="EditItem"
+        Order="Secondary"
+        Priority="0"
+        Text="Edit"
+        Clicked="EditItem_Clicked"/>
+        <ToolbarItem
+        Name="SaveItem"
+        Order="Secondary"
+        Priority="0"
+        Text="Save"
+        Clicked="SaveItem_Clicked"/>
+        <ToolbarItem
+        Name="DeleteItem"
+        Order="Secondary"
+        Priority="0"
+        Text="Delete"
+        Clicked="DeleteItem_Clicked"/>
+        
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
 
@@ -18,7 +41,6 @@
             <Entry x:Name="DateEntry" HorizontalOptions="Fill"/>
 
 
-            <Button x:Name="ButtonEdit" Text="Edit" Margin="75, 10, 75, 0" Clicked="ButtonEdit_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
